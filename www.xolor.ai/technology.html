@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="google-site-verification" content="2VhsNpFO1lhH4LxBz11fWKyI45fjYd0gqgk-sqnjz5M" />
+    <title>Xolor</title>
+
+    <!-- Styles -->
+    <link href="static/css/core.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    
+  <link href="static/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link href="static/css/dropzone.css" rel="stylesheet">
+  <link href="static/css/bootstrap-slider.min.css" rel="stylesheet">
+  <style>
+  .danger-font{
+    font-weight: bold;
+    color: red;
+  }
+</style>
+
+    <!-- END Styles -->
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="static/img/favicon-16.png" sizes="16x16">  
+    <link rel="icon" type="image/png" href="static/img/favicon-32.png" sizes="32x32">
+
+    <!--  Open Graph Tags -->
+    
+  </head>
+
+  <body>
+
+
+    <!-- Topbar -->
+    <nav class="topbar topbar-inverse topbar-expand-md topbar-sticky">
+      <div class="container">
+        
+        <div class="topbar-left">
+          <button class="topbar-toggler">&#9776;</button>
+          <a class="topbar-brand" href="index.html">
+            <img class="logo-default logo" src="static/img/logo.jpg" alt="logo">
+            <img class="logo-inverse logo" src="static/img/logo.jpg" alt="logo">
+          </a>
+        </div>
+
+
+        <div class="topbar-right">
+          <ul class="topbar-nav nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#mission">Our Mission</a>
+            </li>
+              
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#Technology">Technology</a>
+                
+           </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#blog">Blog</a>
+            </li>
+
+  
+              
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Contact</a>
+            </li>
+              
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <!-- END Topbar -->
+
+    <!-- header -->
+    
+    <header class="header header-inverse bg-img" style="background-image: url(/static/img/bone-age.jpg" data-overlay="5">
+      <div class="container text-center">
+
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2">
+
+            <h1>Defect Highlighting</h1>
+            <p class="fs-20 opacity-70">The goal of the <a href="https://ultrahack.org/hackdelhi2019" target="blank" style="font-weight: bold;">ULTRA HACK challenge</a> was to choose a track and provide a technical solution to the demands in that area. We have   developed an algorithm which can accurately determine defects in a X-Ray report and highlght them by colourizing those areas. This application enables others to identify defects from x-ray reports.</p>
+            <br/>
+            <p class="fs-20 opacity-70">Join us at the ULTRA HACK Challenge.</p>
+
+          </div>
+        </div>
+
+        <div class="col-12 align-self-end text-center pb-70">
+          <a class="scroll-down-2 scroll-down-inverse" href="#" data-scrollto="container"><span></span></a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- END header -->
+
+    <!-- Main -->
+    
+    <main class="main-content">
+        
+    <!--
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    | Analyze Your Image
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    !-->
+
+    <section class="section py-50" id="classify">
+        <div class="container-wide">
+            
+            <header class="section-header">
+            <h2>Analyze Your Image</h2>
+            <hr>
+
+            <div class="row">
+              <div class="col-md-3">
+                <button class="btn btn-circular btn-danger" id="reset" title="Reset" data-toggle="tooltip"><i class="fa fa-refresh"></i></button>
+              </div>
+              
+
+                <div class="col-md-6" style="margin-top: 10px; margin-bottom: 10px;">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="url" placeholder="Enter Image URL...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button" id="submit-url" disabled="disabled">Predict</button>
+                    </span>
+                  </div>
+                </div>
+
+              
+              <div class="col-md-3">
+                <button class="btn btn-circular btn-warning" id="random" title="Pick a random test image" data-toggle="tooltip"><i class="fa fa-random"></i></button>
+              </div>
+            </div>
+            <br/>
+            
+            <!-- file uploader here -->
+
+            <!-- -->
+            <div id="results">
+              
+            </div>
+
+            <div id="container">
+              
+            <form action="https://www.16bit.ai/predict" class="dropzone needsclick dz-clickable dz-started" id="mydropzone">
+              <div class="dz-message needsclick">
+                <i class="fa fa-upload fa-5x" aria-hidden="true"></i>
+                <br/>
+                <p>Drop files here or click to find one on your device.</p>
+                <i class="fa fa-camera fa-3x"></i>
+                <br/>
+                <p>If on a mobile device you can take a picture with your camera.</p>
+                <span class="note needsclick">(Selected files will be uploaded. Do not upload patient information. This application is strictly for demonstration purposes and should not be used for clinical decision making.)</span>
+              </div>
+
+            </form>
+            </div>
+
+            <br/>
+
+           
+            
+
+        </div>
+    </section>
+    
+    
+    </main>
+
+    <!-- END Main container -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row gap-y align-items-center">
+          <div class="col-12 col-lg-3">
+            <p class="text-center text-lg-left">
+              <a href="index-2.html"><img class="logo-default logo" src="static/img/logo.jpg" alt="logo"></a>
+            </p>
+          </div>
+
+          <div class="col-12 col-lg-6">
+
+              <ul class="nav nav-inline nav-primary nav-hero">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              
+              
+              <li class="nav-item hidden-sm-down">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+              </li>
+              <li class="nav-item hidden-sm-down">
+                <a class="nav-link" href="index.html#contact">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="col-12 col-lg-3">
+              
+            <img src="static/img/India.png">
+             
+            <p>Proudly made in India</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+     <script
+  src="../code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="static/js/tether.js"></script>
+    
+    <script src="static/js/core.min.js"></script>
+    <script src="static/js/thesaas.min.js"></script>
+    <script src="static/js/script.js"></script>
+    
+    <script src="static/js/bootstrap-slider.js"></script>
+    <script src="static/js/bootstrap-toggle.min.js"></script>
+    <script src="static/js/dropzone.js"></script>
+    <script src="static/js/underscore-min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    })
+    
+    function initializeAgeSlider(){
+      $("#chron-age").slider( {tooltip: 'always' });
+      $("#chron-age").on("change", function() { 
+        $("#chron-ageSliderVal").html(formatAge($("#chron-age").val()));
+        $('#chron-age-months').html($("#chron-age").val());
+        updateStdev();
+      });
+    }
+
+    function updateStdev(){
+      var stdev = calculateStdDev();
+      $('#stdev').html(formatAge(stdev['stdev']));
+      $('#upperLimit').html(formatAge(stdev['upperLimit']));
+      $('#lowerLimit').html(formatAge(stdev['lowerLimit']));
+      $('#upperLimit').removeClass("danger-font");
+      $('#lowerLimit').removeClass("danger-font");
+
+      if($('#gender').prop("checked")){
+        //Male
+        if(age_male_months > stdev['upperLimit']){
+          $('#upperLimit').addClass("danger-font");
+          $('#upperLimit').tooltip({animation: false, placement: 'right',trigger: 'manual'}).tooltip('show');
+        }
+        else if(age_male_months <= stdev['upperLimit']){
+          $('#upperLimit').removeClass("danger-font");
+          $('#upperLimit').tooltip('hide');
+        }
+        if(age_male_months < stdev['lowerLimit']){
+          $('#lowerLimit').addClass("danger-font");
+          $('#lowerLimit').tooltip({animation: false, placement: 'right',trigger: 'manual'}).tooltip('show');
+        }
+        else if(age_male_months >= stdev['lowerLimit']){
+          $('#lowerLimit').removeClass("danger-font");
+          $('#lowerLimit').tooltip('hide');
+        }
+      }
+      else{
+        //Female
+        if(age_female_months > stdev['upperLimit']){
+          $('#upperLimit').addClass("danger-font");
+          $('#upperLimit').tooltip({animation: false, placement: 'right',trigger: 'manual'}).tooltip('show');
+        }
+        else if(age_female_months <= stdev['upperLimit']){
+          $('#upperLimit').removeClass("danger-font");
+          $('#upperLimit').tooltip('hide');
+        }
+        if(age_female_months < stdev['lowerLimit']){
+          $('#lowerLimit').addClass("danger-font");
+          $('#lowerLimit').tooltip({animation: false, placement: 'right',trigger: 'manual'}).tooltip('show');
+        }
+        else if(age_female_months >= stdev['lowerLimit']){
+          $('#lowerLimit').removeClass("danger-font");
+          $('#lowerLimit').tooltip('hide');
+        }
+      }
+
+    }
+
+    var maleBFages = [3,6,9,12,18,24,30,36,42,48,54,60,72,84,96,108,120,132,144,156,168,180,192,204];
+    var maleAvgAges = [3.01, 6.09, 9.56, 12.74, 19.36, 25.97, 32.40, 38.21, 43.89, 49.04, 56.00, 62.43, 75.46, 88.20, 101.38, 113.9, 125.68, 137.32, 148.82, 158.39, 170.02, 182.72, 195.32, 206.21];
+    var maleBFstdevs = [.69,1.13,1.43,1.97,3.52,3.92,4.52,5.08,5.4,6.66,8.36,8.79,9.17,8.91,9.1,9,9.79,10.09,10.38,10.44,10.72, 11.32, 12.86, 13.05];
+    var femaleBFages = [3,6,9,12,18,24,30,36,42,48,54,60,72,84,96,108,120,132,144,156,168,180,192];
+    var femaleAvgAges = [3.02, 6.04, 9.05, 12.04, 18.22, 24.16, 30.96, 36.63, 43.50, 50.14, 60.06, 66.21, 78.50, 89.30, 100.66, 113.86, 125.66, 137.87, 149.62, 162.28, 174.25, 183.62, 189.44];
+    var femaleBFstdevs = [.72,1.16,1.36,1.77,3.49,4.64,5.37,5.97,7.48,8.98,10.73,11.65,10.23,9.64,10.23,10.74,11.73,11.94,10.24,10.67,11.3,9.23,7.31];
+
+    function getClosest(array, target) {
+        var tuples = _.map(array, function(val) {
+            return [val, Math.abs(val - target)];
+        });
+        return _.reduce(tuples, function(memo, val) {
+            return (memo[1] < val[1]) ? memo : val;
+        }, [-1, 999])[0];
+    }
+
+    function calculateStdDev(){
+      //Get chronological age
+      var chronAge = parseFloat($("#chron-age").val());
+      var stdev = 0;
+      var lowerLimit = 0; //-2SD below mean
+      var upperLimit = 0; //+2SD above mean
+      var correctedAge = 0;
+      var index = 0;
+      if($('#gender').prop("checked")){
+        //Male
+        index = maleBFages.indexOf(getClosest(maleBFages, chronAge));
+        correctedAge = (maleAvgAges[index] - maleBFages[index]) + chronAge;
+        stdev = maleBFstdevs[index];
+      }
+      else{
+        //Female
+        index = femaleBFages.indexOf(getClosest(femaleBFages, chronAge));
+        correctedAge = (femaleAvgAges[index] - femaleBFages[index]) + chronAge;
+        stdev = femaleBFstdevs[index];
+      }
+      lowerLimit = (parseFloat(correctedAge) - (2*stdev)).toFixed(0);
+      upperLimit = (parseFloat(correctedAge) + (2*stdev)).toFixed(0);
+      return({"stdev": stdev.toFixed(0), "lowerLimit": lowerLimit, "upperLimit": upperLimit});
+    }
+
+    </script>
+
+    <script>
+
+        $( document ).ready(function() {
+          $('#result').hide();
+          checkURL($('#url').val());
+        });
+
+        $.fn.preload = function() {
+          this.each(function(){
+              $('<img/>')[0].src = this;
+          });
+        };
+
+        $(['/static/img/partners/carbon60.png','static/img/partners/nvidia.jpg', 'static/img/rsna-logo.png', '/static/img/loading.gif']).preload();
+
+        $('#url').on('input', function() {
+          checkURL($('#url').val());
+        });
+
+        function formatAge(months){
+          string = "";
+          age_years = Math.floor(parseInt(months) / 12);
+          age_months = parseInt(months) % 12;
+
+          if (age_years == 1){
+            string = String(age_years.toFixed(0)) + " year ";
+          }
+          else if (age_years > 1){
+            string = String(age_years.toFixed(0)) + " years "
+          }
+            
+          if (age_months == 1){
+            string += String(age_months.toFixed(0))+ " month ";
+          }    
+          else if (age_months > 1){
+            string += String(age_months.toFixed(0)) + " months ";
+          }
+          else{
+            string += " 0 months ";
+          }
+
+
+          return(string);
+        }
+    
+
+        function checkURL(url) {
+          if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){ 
+            $('#submit-url').prop('disabled', false);
+          }
+          else{
+            $('#submit-url').prop('disabled', true);
+          }
+        }
+
+        function initialize_gender_toggle(){
+            $('[data-toggle="tooltip"]').tooltip();
+            $('#gender').bootstrapToggle();
+            if($('#gender').prop("checked")){
+              age = age_male;
+            }
+            else{
+              age = age_female;
+            }
+            $('#age-output').html(age);
+
+            $('#gender').change(function() {
+              $('#upperLimit').tooltip('dispose');
+              $('#lowerLimit').tooltip('dispose');
+              if($('#gender').prop("checked")){
+                age = age_male;
+              }
+              else{
+                age = age_female;
+              }
+              $('#age-output').html(age);
+              updateStdev();
+            });
+        }
+
+        $('#reset').click(function(){
+          $('#results').hide();
+          $('#container').show();
+          $('#url').val('');
+          $('#submit-url').prop('disabled', true);
+          $('#upperLimit').tooltip('dispose');
+          $('#lowerLimit').tooltip('dispose');
+        });
+
+        $('#random').click(function(){
+          $('#results').show();
+          $('#container').hide();
+
+          $.ajax({
+            url: "/predict", 
+            type: "GET", 
+            beforeSend: function(xhr){
+              displayLoading();
+            }, 
+            success: function(response){
+              displayResults(response);
+            },
+            error: function(response){
+              $('#results').html("<p>Something went wrong :(</p>");
+            }
+          });
+        });
+
+        $('#submit-url').click(function(){
+          $('#submit-url').prop('disabled', true);
+          $('#results').show();
+          $('#container').hide();
+
+          $.ajax({
+            url: "/predict-url", 
+            type: "POST",
+            data: {url: $('#url').val()},
+            beforeSend: function(xhr){
+              displayLoading();
+            }, 
+            success: function(response){
+              displayResults(response);
+            },
+            error: function(response){
+              $('#results').html("<p>Something went wrong :(</p>");
+            }
+          });
+        }); 
+
+        function displayResults(response){
+          $('#reset').prop("disabled", false);
+          $('#random').prop("disabled", false);
+          var data = jQuery.parseJSON(response);
+            age_male_months = parseInt(data.age_male);
+            age_female_months = parseInt(data.age_female);
+            age_male = formatAge(data.age_male);
+            age_female = formatAge(data.age_female);
+            age = age_male;
+            $('#container').hide();
+            $('#results').html('<div class="row gap-y align-items-center mb-90"><div class="col-12 col-md-6 text-center"><img src="'+ data.img_path +'"></div><div class="col-12 col-md-5 offset-md-1 text-center text-md-left"><h3 class="fw-300">Predicted Bone Age:</h3><p class="fs-40 fw-900 opacity-50" id="age-output">' + age + '</p><div class="form-group"><input type="checkbox" checked name="gender" id="gender" data-toggle="toggle" data-on="Male" data-off="Female" data-onstyle="primary" data-offstyle="female"></div><label><a data-toggle="tooltip" title="Adjust age with slider below">Chronological Age:</a> <span id="chron-ageSliderVal">' + age + '</span></label><br/><input id="chron-age" type="text" name="chronological age" data-slider-min="1" data-slider-max="204" data-slider-step="1" data-slider-value="'+ data.age_male +'" /><div><div>Standard Deviation<sup>1</sup>: <span id="stdev"></span></div><div>Upper Limit (+2 SD): <a id="upperLimit" title="Bone age above normal limits" data-placement="right"></a><div>Lower Limit (-2 SD): <a id="lowerLimit" title="Bone age below normal limits" data-placement="right"></a></div></div><br/><p>Inference Time: ' + data.inference_time + ' seconds</p></div>'); 
+            initialize_gender_toggle();
+            initializeAgeSlider();
+            updateStdev();
+            $('#results').show();
+        };
+
+        function displayLoading(){
+          $('#upperLimit').tooltip('dispose');
+          $('#lowerLimit').tooltip('dispose');
+          $('#reset').prop("disabled", true);
+          $('#random').prop("disabled", true);
+          $('#submit-url').prop("disabled", true);
+          var phrases = ["Feeding the unicorns...", "Dusting off Greulich and Pyle...", "Adjusting hyperparameters...", "Reducing the learning rate...", "Locating the required gigapixels to render...", "Spinning up the hamster...", "Shovelling coal into the server...", "Programming the flux capacitor...", "Building igloos...", "Solving for X...", "Dropping mics...", "Booting HAL...", "Sharpening pencils...", "Calling Houston...", "Converting to metric...", "Measuring epiphyses...", "Counting carpal bones...", "Closing the growth plates...", "Feeding radiologists...", "Loading .vimrc...", "Deleting pycharm...", "Switching to python 3.4..."];
+            $('#results').html('<img style="height:150px;" src="static/img/loading.gif"><h5 id="phrase">'+ phrases[Math.floor(Math.random() * phrases.length)] + '</h5><p>We would like to acknowledge our partners for their tremendous support:</p><img style="margin-right: 25px;" src="/static/img/partners/nvidia.jpg"><img src="/static/img/partners/carbon60.png"></br><br/><p>Thanks to RSNA for organizing the 2017 Machine Learning Challenge</p><img src="/static/img/rsna-logo.png">');
+            $('#container').hide();
+            $('#results').show();
+
+            window.setInterval(function(){
+              $('#phrase').html(phrases[Math.floor(Math.random() * phrases.length)])
+              $('#phrase').fadeIn();
+            }, 2500);
+        };
+      
+      
+      Dropzone.options.mydropzone = {
+        method: "POST",
+        uploadMultiple: false,
+        maxFiles: 1,
+        resizeMethod: "contain",
+        resizeHeight: 500,
+        resizeWidth: 500,
+        resizeQuality: 1.0,
+        acceptedFiles: "image/*",
+        addRemoveLinks: false,
+        capture: "camera",
+        init: function() {
+          this.on("sending", function(file) { 
+            displayLoading();
+          });
+
+          this.on("error", function(file) { 
+            $('#reset').prop("disabled", false);
+            $('#random').prop("disabled", false);
+            $('#results').html("<p>Something went wrong :(</p>"); 
+          });
+          
+          this.on("success", function(file, response) {
+            this.removeFile(file);
+            displayResults(response);
+          });
+        }
+      };
+    </script>
+    
+
+  </body>
+
+
+</html>

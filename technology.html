@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="google-site-verification" content="2VhsNpFO1lhH4LxBz11fWKyI45fjYd0gqgk-sqnjz5M" />
+    <title>Xolor</title>
+
+    <!-- Styles -->
+    <link href="static/css/core.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    
+  <link href="static/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link href="static/css/dropzone.css" rel="stylesheet">
+  <link href="static/css/bootstrap-slider.min.css" rel="stylesheet">
+  <style>
+  .danger-font{
+    font-weight: bold;
+    color: red;
+  }
+</style>
+
+    <!-- END Styles -->
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="static/img/favicon-16.png" sizes="16x16">  
+    <link rel="icon" type="image/png" href="static/img/favicon-32.png" sizes="32x32">
+
+    <!--  Open Graph Tags -->
+    
+  </head>
+
+  <body>
+
+
+    <!-- Topbar -->
+    <nav class="topbar topbar-inverse topbar-expand-md topbar-sticky">
+      <div class="container">
+        
+        <div class="topbar-left">
+          <button class="topbar-toggler">&#9776;</button>
+          <a class="topbar-brand" href="index.html">
+            <img class="logo-default logo" src="static/img/logo.jpg" alt="logo">
+            <img class="logo-inverse logo" src="static/img/logo.jpg" alt="logo">
+          </a>
+        </div>
+
+
+        <div class="topbar-right">
+          <ul class="topbar-nav nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#mission">Our Mission</a>
+            </li>
+              
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#Technology">Technology</a>
+                
+           </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#blog">Blog</a>
+            </li>
+
+  
+              
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Contact</a>
+            </li>
+              
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <!-- END Topbar -->
+
+    <!-- header -->
+    
+    <header class="header header-inverse bg-img" style="background-image: url(/static/img/bone-age.jpg" data-overlay="5">
+      <div class="container text-center">
+
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2">
+
+            <h1>Defect Highlighting</h1>
+            <p class="fs-20 opacity-70">The goal of the <a href="https://ultrahack.org/hackdelhi2019" target="blank" style="font-weight: bold;">ULTRA HACK challenge</a> was to choose a track and provide a technical solution to the demands in that area. We have   developed an algorithm which can accurately determine defects in a X-Ray report and highlght them by colourizing those areas. This application enables others to identify defects from x-ray reports.</p>
+            <br/>
+            <p class="fs-20 opacity-70">Join us at the ULTRA HACK Challenge.</p>
+
+          </div>
+        </div>
+
+        <div class="col-12 align-self-end text-center pb-70">
+          <a class="scroll-down-2 scroll-down-inverse" href="#" data-scrollto="container"><span></span></a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- END header -->
+
+    <!-- Main -->
+    
+    <main class="main-content">
+        
+    <!--
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    | Analyze Your Image
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    !-->
+
+    <section class="section py-50" id="classify">
+        <div class="container-wide">
+            
+            <header class="section-header">
+            <h2>Analyze Your Image</h2>
+            <hr>
+
+            <div class="row">
+              <div class="col-md-3">
+                <button class="btn btn-circular btn-danger" id="reset" title="Reset" data-toggle="tooltip"><i class="fa fa-refresh"></i></button>
+              </div>
+              
+
+                <div class="col-md-6" style="margin-top: 10px; margin-bottom: 10px;">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="url" placeholder="Enter Image URL...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button" id="submit-url" disabled="disabled">Predict</button>
+                    </span>
+                  </div>
+                </div>
+
+              
+              <div class="col-md-3">
+                <button class="btn btn-circular btn-warning" id="random" title="Pick a random test image" data-toggle="tooltip"><i class="fa fa-random"></i></button>
+              </div>
+            </div>
+            <br/>
+            
+            <!-- file uploader here -->
+
+            <!-- -->
+            <div id="results">
+              
+            </div>
+
+            <div id="container">
+              
+            <form action="https://www.16bit.ai/predict" class="dropzone needsclick dz-clickable dz-started" id="mydropzone">
+              <div class="dz-message needsclick">
+                <i class="fa fa-upload fa-5x" aria-hidden="true"></i>
+                <br/>
+                <p>Drop files here or click to find one on your device.</p>
+                <i class="fa fa-camera fa-3x"></i>
+                <br/>
+                <p>If on a mobile device you can take a picture with your camera.</p>
+                <span class="note needsclick">(Selected files will be uploaded. Do not upload patient information. This application is strictly for demonstration purposes and should not be used for clinical decision making.)</span>
+              </div>
+
+            </form>
+            </div>
+
+            <br/>
+
+           
+            
+
+        </div>
+    </section>
+    
+    
+    </main>
+
+    <!-- END Main container -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row gap-y align-items-center">
+          <div class="col-12 col-lg-3">
+            <p class="text-center text-lg-left">
+              <a href="index-2.html"><img class="logo-default logo" src="static/img/logo.jpg" alt="logo"></a>
+            </p>
+          </div>
+
+          <div class="col-12 col-lg-6">
+
+              <ul class="nav nav-inline nav-primary nav-hero">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              
+              
+              <li class="nav-item hidden-sm-down">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+              </li>
+              <li class="nav-item hidden-sm-down">
+                <a class="nav-link" href="index.html#contact">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="col-12 col-lg-3">
+              
+            <img src="static/img/India.png">
+             
+            <p>Proudly made in India</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    
+    
+
+  </body>
+
+
+</html>
